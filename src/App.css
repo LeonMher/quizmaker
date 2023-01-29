@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
@@ -35,4 +39,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.form{
+  width: 300px; 
+ 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form input {
+height: 40px;
+padding: 10px;
+}
+
+.form button{
+  margin-top: 40px;
+  height: 80px;
+  border-radius: 5px;
+  border:none;
+  font-size: 20px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.form button:hover{
+  background-color: #0027d4f3;
 }

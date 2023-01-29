@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect } from "react";
+import Quiz from "./Quiz";
+import Login from "./Login";
+import { Routes, Route } from "react-router-dom";
+import Admin from "./Admin";
+import Home from "./Home";
+import SuperRoute from "./SuperRoute";
+import LandingPage from "./LandingPage";
 
-function App() {
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+
+const App = () => {
+  const useAuth = () => {
+    const token = cookies.get("TOKEN");
+
+    return token;
+  };
+  const isAuth = useAuth();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!isAuth && <Login />}
+
+      {/* <Nav /> */}
+      <Routes>
+        <Route element={<SuperRoute />}>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/admin" element={<Admin />} />
+        </Route>
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
