@@ -6,7 +6,6 @@ import { Routes, Route } from "react-router-dom";
 import Admin from "./Admin";
 import Home from "./Home";
 import SuperRoute from "./SuperRoute";
-import LandingPage from "./LandingPage";
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();

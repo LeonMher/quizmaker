@@ -8,7 +8,7 @@ const Quiz = () => {
   const [showScore, setShowScore] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/get").then((res) => {
+    axios.get("http://localhost:8081/get").then((res) => {
       setQuizzes(res);
     });
   }, []);

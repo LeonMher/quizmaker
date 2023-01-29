@@ -18,7 +18,7 @@ function Admin() {
   };
   const handleSubmit = () => {
     axios
-      .post("http://localhost:3001/submit-quiz", postData)
+      .post("http://localhost:8081/submit-quiz", postData)
       .then((res) => console.log(res));
   };
 
